@@ -52,7 +52,7 @@ Depth of 2 means ~/Code(1)/Project-A(2)/
 Session actions are json objects that define what you want to do with the selected files 
 
 default is for VSCode and Neovim (remove it if you dont need it)
-``` JSON
+``` JS
 
 [
     {
