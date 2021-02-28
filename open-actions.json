@@ -1,0 +1,14 @@
+[
+    {
+        "command" : "konsole -e nvim",
+        "isCLI" : true,
+        "display_name" : "Open in Neovim",
+        "icon" : "images/nvim.png"
+    },
+    {
+        "command" : "code",
+        "isCLI" : true,
+        "display_name" : "Open in VSCode",
+        "icon" : "images/vscode.png"
+    }
+]

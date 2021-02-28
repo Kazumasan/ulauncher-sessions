@@ -66,7 +66,7 @@ default is for VSCode and Neovim (remove it if you dont need it)
     {
         "extension": ".code-workspace",
         "command" : "code",
-        "isCLI" : false,
+        "isCLI" : true,
         "display_name" : "Open in VSCode",
         "icon" : "images/vscode.png"
     }
@@ -75,9 +75,26 @@ default is for VSCode and Neovim (remove it if you dont need it)
 
 **Located** @ `~/.local/share/ulauncher/extensions/Sessions/`
 
-## Unlinked files
+## Open Actions
 
-if you have added a file extension to the list that doesnt have an actions set up e.g `.eclipse`
-it will ask you wich actions you want to try on it. 
+This branch features a slight twist if you have listed a file extension in your list but don't have an action set for it, it will ask you wich action you wan't to use to *Open* the file with. It won't open the *session* but the actual file for editing. There for a second list exists where you can specify the 'open with...' action.
 
-idea behind that is that for example vim sessions are vimscript that doesnt have to end with .vim (*file content is more important*) so if i setup a .vim action it will treat all other .vim files as "Session" wich is unwanted but in case you know that this file actually hase the session as its content and perhaps the file extensions is incorrect fore some reason this will provide a neat way to remedy that. It will then try to open that file with that action.
+``` JSON
+[
+    {
+        "command" : "konsole -e nvim",          //command / application
+        "isCLI" : true,                         //if the executable is a terminal app or not e.g vim / neovim
+                                                //but can also help if it doesn't work otherwise
+        "display_name" : "Open in Neovim",      //this time its actually used
+        "icon" : "images/nvim.png"              //icon you want next to it
+    },
+    {
+        "command" : "code",
+        "isCLI" : true,
+        "display_name" : "Open in VSCode",
+        "icon" : "images/vscode.png"
+    }
+]
+```
+
+**Located** @ `~/.local/share/ulauncher/extensions/Sessions/`

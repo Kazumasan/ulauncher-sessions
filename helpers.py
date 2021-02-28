@@ -11,7 +11,9 @@ from ulauncher.api.shared.action.HideWindowAction import HideWindowAction
 
 def checkFile(path):
     for x in sessionActions:
+        print("looking for : ", os.path.splitext(path)[1], x["extension"])
         if os.path.splitext(path)[1] == x["extension"]:
+            print("found ", x["extension"], "returning ,", x)
             return x
 
     linkObject = {
@@ -41,6 +43,7 @@ def loadJson(path):
     return json.loads(t)
 
 
+
 def formatExtension(extension_raw):
     extensions = extension_raw.split(",")
     final = []
@@ -57,7 +60,6 @@ def formatName(string):
 
 def scan_workspaces(path, depth, extensions):
     results = []
-    print(path, depth, extensions)
     if depth > 0:
         for x in os.listdir(path):
             if os.path.isdir(os.path.join(path, x)):
@@ -75,7 +77,7 @@ def scan_workspaces(path, depth, extensions):
 
 def notlinked(ws, linkObject):
     entries = []
-    for action in sessionActions:
+    for action in openActions:
         entries.append(
             ExtensionResultItem(
                 icon=action["icon"],
@@ -98,5 +100,6 @@ def execAction(cmd_path, opt):
         cmd_path + " " + opt[0], shell=opt[1]["isCLI"], cwd=os.path.dirname(opt[0])
     )
 
-print(os.path.realpath(__file__))
-sessionActions = loadJson("/session-actions.json")
+
+sessionActions = loadJson("session-actions.json")
+openActions = loadJson("open-actions.json")

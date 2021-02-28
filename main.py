@@ -42,6 +42,7 @@ class KeywordQueryEventListener(EventListener):
         
         for ws in workspaces:
             action = checkFile(ws)
+            print("-----------", action)
             entries.append(
                 ExtensionResultItem(
                     icon=action["icon"],
@@ -65,10 +66,17 @@ class ItemEnterEventListener(EventListener):
         cmd_path = data["open_cmd"]
         opt = data["opt"]
 
+        print("-----" , data)
+
         if cmd_path == "notlinked":
+            print("\n --- calling notlinked --- \n")
             return RenderResultListAction(notlinked(opt[0], opt[1]))
         else:
             execAction(cmd_path, opt)
+
+
+
+
 
 
 if __name__ == "__main__":
