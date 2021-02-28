@@ -52,7 +52,7 @@ Depth of 2 means ~/Code(1)/Project-A(2)/
 Session actions are json objects that define what you want to do with the selected files 
 
 default is for VSCode and Neovim (remove it if you dont need it)
-``` JSON
+``` JS
 
 [
     {
@@ -79,7 +79,7 @@ default is for VSCode and Neovim (remove it if you dont need it)
 
 This branch features a slight twist if you have listed a file extension in your list but don't have an action set for it, it will ask you wich action you wan't to use to *Open* the file with. It won't open the *session* but the actual file for editing. There for a second list exists where you can specify the 'open with...' action.
 
-``` JSON
+``` JS
 [
     {
         "command" : "konsole -e nvim",          //command / application
