@@ -1,8 +1,8 @@
-# Sessions [icon](images/icon.png)
+# Sessions [icon](https://github.com/Kazumasan/ulauncher-sessions/blob/master/images/icon.png)
 
 ## Launch Session files like any other Programm
 
-# Gif
+[gif](https://github.com/Kazumasan/ulauncher-sessions/blob/master/demo.gif)
 
 This plugin is should make it easy if you use vim Sessions or any other session file.
 
