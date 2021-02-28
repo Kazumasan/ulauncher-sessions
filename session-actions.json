@@ -1,0 +1,16 @@
+[
+    {
+        "extension": ".vim-session",
+        "command" : "konsole -e nvim -S",
+        "isCLI" : true,
+        "display_name" : "Neovim",
+        "icon" : "images/nvim.png"
+    },
+    {
+        "extension": ".code-workspace",
+        "command" : "code",
+        "isCLI" : true,
+        "display_name" : "VSCode",
+        "icon" : "images/vscode.png"
+    }
+]

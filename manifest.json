@@ -1,0 +1,40 @@
+{
+  "required_api_version": "^2.0.0",
+  "name": "Sessions",
+  "description": "Launch IDE session like any other Programm",
+  "developer_name": "Kazumasan",
+  "icon": "images/icon.png",
+  "options": {
+    "query_debounce": 0.1
+  },
+  "preferences": [
+    {
+      "id": "keyword",
+      "type": "keyword",
+      "name": "Sessions",
+      "description": "Keyword to invoke this extension",
+      "default_value": "S"
+    },
+    {
+      "id": "root",
+      "type": "input",
+      "name": "Search Root",
+      "description": "Select the root from where we should start searching.",
+      "default_value": "~/Code"
+    },
+    {
+      "id": "file_extensions",
+      "type": "input",
+      "name": "File extension",
+      "description": "list of file extensions to look for ',' seperated",
+      "default_value": ".code-workspace, .vim-session"
+    },
+    {
+      "id": "extension_depth",
+      "type": "input",
+      "name": "Search Depth",
+      "description": "How many directorys deep should the search be. See readme for more info.",
+      "default_value": "2"
+    }
+  ]
+}
