@@ -29,28 +29,31 @@ class KeywordQueryEventListener(EventListener):
         )
         print("----> Found: ", workspaces)
         
-        # Filter by query if inserted but Names not pathes....
+        #filter workspaces by query
         query = event.get_argument()
-        if query:
+        print(query)
+        if(query != "" and query != None):
             query = query.strip().lower()
+            filtered = []
             for ws in workspaces:
-                name = ws.lower()
-                if query not in name:
-                    workspaces.pop(ws)
+                if query in ws.lower():
+                    filtered.append(ws)
+        else:
+            filtered = workspaces
+
 
         entries = []
-        
-        for ws in workspaces:
-            action = checkFile(ws)
+        for fl in filtered:
+            action = checkFile(fl)
             entries.append(
                 ExtensionResultItem(
                     icon=action["icon"],
-                    name=formatName(ws),
-                    description=ws,
+                    name=formatName(fl),
+                    description=fl,
                     on_enter=ExtensionCustomAction(
                         {
                             "open_cmd": action["command"],
-                            "opt": [ws, action],
+                            "opt": [fl, action],
                         },
                         keep_app_open=True,
                     ),
