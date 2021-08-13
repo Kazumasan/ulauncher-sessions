@@ -6,7 +6,6 @@ import subprocess
 
 from ulauncher.api.shared.action.ExtensionCustomAction import ExtensionCustomAction
 from ulauncher.api.shared.item.ExtensionResultItem import ExtensionResultItem
-from ulauncher.api.shared.action.HideWindowAction import HideWindowAction
 
 
 def checkFile(path):
